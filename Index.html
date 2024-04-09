@@ -1,6 +1,166 @@
-<div class="ribbon mdc-elevation--z4"></div>
-<main class="main-content mdc-typography mdc-elevation--z8">
-  <script async src="https://cdn.carbonads.com/carbon.js?serve=CK7I6K3E&amp;placement=wwwrichie-bendallml" id="_carbonads_js"></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROS Data Waster</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/14.1.0/material-components-web.min.css">
+    <style>
+        body {
+            --mdc-theme-primary: #3f51b5;
+            --mdc-theme-secondary: #f44336;
+            --mdc-theme-on-primary: #ffffff;
+            --mdc-theme-on-secondary: #ffffff;
+            background-color: #fafafa;
+        }
+
+        .ribbon {
+            top: 0;
+            z-index: -1;
+            background-color: #3f51b5;
+            width: 100%;
+            height: 10rem;
+            position: absolute;
+        }
+
+       .main-content {
+    background-color: #ffffff;
+    border-radius: 4px;
+    margin: 1.5rem;
+    padding: 2rem;
+    min-height: calc(100vh - 7rem);
+    .theme-toggle {
+      position: absolute;
+      top: 0.5rem;
+      right: 3rem;
+    }
+    a {
+      color: #3f51b5;
+    }
+    ::selection {
+      background-color: #3f51b5;
+      color: white;
+    }
+    #carbonads {
+      margin-bottom: 1rem;
+      float: right;
+      border-radius: 6px;
+      box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+      font-family: Roboto, Helvetica, sans-serif;
+      line-height: 28px;
+      padding: 8px;
+      box-sizing: border-box;
+      transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      @media only screen and (max-width: 425px) {
+        width: 100%;
+      }
+      &:hover {
+        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+          0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+          0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+      }
+      .carbon-wrap {
+        .carbon-img > img {
+          margin-right: 9px;
+          float: left;
+          @media only screen and (max-width: 400px) {
+            width: auto;
+            max-width: 130px;
+            height: 50px;
+          }
+        }
+        .carbon-text {
+          color: #637381;
+          font-weight: 300;
+          display: block;
+          font-size: 12px;
+          line-height: 15.96px;
+          margin-bottom: 0;
+          margin-top: 8px;
+          text-decoration: none;
+        }
+      }
+      .carbon-poweredby {
+        color: #c5cdd0;
+        font-size: 8px;
+        font-weight: 500;
+        line-height: 10px;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+    }
+    .option--mbs {
+      width: 100%;
+      margin-top: 32px;
+    }
+    .mdc-switch__label {
+      margin-left: 10px;
+    }
+    .option--threads__title {
+      margin-bottom: 0;
+    }
+  }
+  .output--progress {
+    bottom: 0px;
+    height: 8px;
+    position: fixed;
+  }
+  &.setting--dark {
+    background-color: #212121 !important;
+    --mdc-theme-text-primary-on-background: white;
+    --mdc-theme-text-secondary-on-background: white;
+    --mdc-theme-text-icon-on-background: white;
+    .main-content {
+      color: white;
+      background-color: #303030;
+      .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input,
+      .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+        color: white;
+      }
+      .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+        .mdc-notched-outline__leading,
+      .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+        .mdc-notched-outline__notch,
+      .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+        .mdc-notched-outline__trailing {
+        border-color: white;
+      }
+      #carbonads .carbon-text {
+        color: white !important;
+      }
+      a {
+        color: #5c6bc0;
+      }
+      ::selection {
+        background-color: #c5cae9;
+        color: black;
+      }
+    }
+    .mdc-linear-progress__buffer {
+      background-color: #404040;
+    }
+  }
+  &.setting--animate-colours {
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    .main-content,
+    a,
+    ::selection {
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      transition-property: background-color, color;
+    }
+  }
+}
+
+
+    </style>
+</head>
+
+<body class="setting--animate-colours">
+    <div class="ribbon mdc-elevation--z4"></div>
+    <main class="main-content mdc-typography mdc-elevation--z8">
+      <script async src="https://cdn.carbonads.com/carbon.js?serve=CK7I6K3E&amp;placement=wwwrichie-bendallml" id="_carbonads_js"></script>
   <button class="theme-toggle mdc-fab mdc-fab--mini" aria-label="Toggle Theme Settings" data-mdc-auto-init="MDCRipple">
         <svg class="theme-toggle--svg mdc-fab__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path fill="none" d="M0 0h24v24H0V0z" />
@@ -88,154 +248,41 @@
     </div>
   </div>
 </main>
-<div role="progressbar" class="output--progress mdc-linear-progress mdc-linear-progress--indeterminate mdc-linear-progress--closed" data-mdc-auto-init="MDCLinearProgress">
-  <div class="mdc-linear-progress__buffering-dots"></div>
-  <div class="mdc-linear-progress__buffer"></div>
-  <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
-    <span class="mdc-linear-progress__bar-inner"></span>
-  </div>
-  <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
-    <span class="mdc-linear-progress__bar-inner"></span>
-  </div>
-</div>
-<style>
-  body {
-	 --mdc-theme-primary: #3f51b5;
-	 --mdc-theme-secondary: #f44336;
-	 --mdc-theme-on-primary: #fff;
-	 --mdc-theme-on-secondary: #fff;
-	 background-color: #fafafa;
-}
- body .ribbon {
-	 top: 0;
-	 z-index: -1;
-	 background-color: #3f51b5;
-	 width: 100%;
-	 height: 10rem;
-	 position: absolute;
-}
- body .main-content {
-	 background-color: #fff;
-	 border-radius: 4px;
-	 margin: 1.5rem;
-	 padding: 2rem;
-	 min-height: calc(100vh - 7rem);
-}
- body .main-content .theme-toggle {
-	 position: absolute;
-	 top: 0.5rem;
-	 right: 3rem;
-}
- body .main-content a {
-	 color: #3f51b5;
-}
- body .main-content ::selection {
-	 background-color: #3f51b5;
-	 color: white;
-}
- body .main-content #carbonads {
-	 margin-bottom: 1rem;
-	 float: right;
-	 border-radius: 6px;
-	 box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-	 font-family: Roboto, Helvetica, sans-serif;
-	 line-height: 28px;
-	 padding: 8px;
-	 box-sizing: border-box;
-	 transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
- @media only screen and (max-width: 425px) {
-	 body .main-content #carbonads {
-		 width: 100%;
-	}
-}
- body .main-content #carbonads:hover {
-	 box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-}
- body .main-content #carbonads .carbon-wrap .carbon-img > img {
-	 margin-right: 9px;
-	 float: left;
-}
- @media only screen and (max-width: 400px) {
-	 body .main-content #carbonads .carbon-wrap .carbon-img > img {
-		 width: auto;
-		 max-width: 130px;
-		 height: 50px;
-	}
-}
- body .main-content #carbonads .carbon-wrap .carbon-text {
-	 color: #637381;
-	 font-weight: 300;
-	 display: block;
-	 font-size: 12px;
-	 line-height: 15.96px;
-	 margin-bottom: 0;
-	 margin-top: 8px;
-	 text-decoration: none;
-}
- body .main-content #carbonads .carbon-poweredby {
-	 color: #c5cdd0;
-	 font-size: 8px;
-	 font-weight: 500;
-	 line-height: 10px;
-	 text-transform: uppercase;
-	 text-decoration: none;
-}
- body .main-content .option--mbs {
-	 width: 100%;
-	 margin-top: 32px;
-}
- body .main-content .mdc-switch__label {
-	 margin-left: 10px;
-}
- body .main-content .option--threads__title {
-	 margin-bottom: 0;
-}
- body .output--progress {
-	 bottom: 0px;
-	 height: 8px;
-	 position: fixed;
-}
- body.setting--dark {
-	 background-color: #212121 ;
-	 --mdc-theme-text-primary-on-background: white;
-	 --mdc-theme-text-secondary-on-background: white;
-	 --mdc-theme-text-icon-on-background: white;
-}
- body.setting--dark .main-content {
-	 color: white;
-	 background-color: #303030;
-}
- body.setting--dark .main-content .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input, body.setting--dark .main-content .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
-	 color: white;
-}
- body.setting--dark .main-content .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading, body.setting--dark .main-content .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch, body.setting--dark .main-content .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
-	 border-color: white;
-}
- body.setting--dark .main-content #carbonads .carbon-text {
-	 color: white ;
-}
- body.setting--dark .main-content a {
-	 color: #5c6bc0;
-}
- body.setting--dark .main-content ::selection {
-	 background-color: #c5cae9;
-	 color: black;
-}
- body.setting--dark .mdc-linear-progress__buffer {
-	 background-color: #404040;
-}
- body.setting--animate-colours {
-	 transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
- body.setting--animate-colours .main-content, body.setting--animate-colours a, body.setting--animate-colours ::selection {
-	 transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-	 transition-property: background-color, color;
-}
- 
-</style>
-<Script>
-mdc.autoInit();
+    <div role="progressbar" class="output--progress mdc-linear-progress mdc-linear-progress--indeterminate mdc-linear-progress--closed"
+        data-mdc-auto-init="MDCLinearProgress">
+        <div class="mdc-linear-progress__buffering-dots"></div>
+        <div class="mdc-linear-progress__buffer"></div>
+        <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+            <span class="mdc-linear-progress__bar-inner"></span>
+        </div>
+        <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+            <span class="mdc-linear-progress__bar-inner"></span>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/14.1.0/material-components-web.min.js"></script>
+    <script>
+        mdc.autoInit();
+
+        $(".option--mbs").hide();
+
+        String.prototype.cycle = function(arr) {
+            const i = arr.indexOf(this.toString());
+            if (i === -1) return undefined;
+            return arr[(i + 1) % arr.length];
+        };
+
+        const handleTheme = () => {
+            // Add your theme handling code here
+        };
+
+        // Add the rest of your JavaScript code here
+    </script>
+
+    <!-- Babel JS code -->
+    <script type="text/babel">
+      mdc.autoInit();
 
 $(".option--mbs").hide();
 
@@ -249,19 +296,19 @@ const handleTheme = () => {
   switch (localStorage.getItem("theme")) {
     case "light":
       $(".theme-toggle--svg").html(
-        '<path fill="none" d="M0 0h24v24H0V0z"/><path d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48zM12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/><circle cx="12" cy="12" r="2.5"/>'
+        `<path fill="none" d="M0 0h24v24H0V0z"/><path d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48zM12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/><circle cx="12" cy="12" r="2.5"/>`
       );
       $("body").removeClass("setting--dark");
       break;
     case "dark":
       $(".theme-toggle--svg").html(
-        '<path fill="none" d="M0 0h24v24H0V0z"/><path d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48zM12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>'
+        `<path fill="none" d="M0 0h24v24H0V0z"/><path d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48zM12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>`
       );
       $("body").addClass("setting--dark");
       break;
     default:
       $(".theme-toggle--svg").html(
-        '<path fill="none" d="M0 0h24v24H0V0z"/><path d="M11 7l-3.2 9h1.9l.7-2h3.2l.7 2h1.9L13 7h-2zm-.15 5.65L12 9l1.15 3.65h-2.3zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48z"/>'
+        `<path fill="none" d="M0 0h24v24H0V0z"/><path d="M11 7l-3.2 9h1.9l.7-2h3.2l.7 2h1.9L13 7h-2zm-.15 5.65L12 9l1.15 3.65h-2.3zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zm-2 5.79V18h-3.52L12 20.48 9.52 18H6v-3.52L3.52 12 6 9.52V6h3.52L12 3.52 14.48 6H18v3.52L20.48 12 18 14.48z"/>`
       );
       const hours = new Date().getHours();
       $("body").toggleClass(
@@ -316,5 +363,103 @@ const download = id => {
       getmbs() !== 0 &&
       parseInt($(".output--byte").html()) /
         parseInt($(".option--mbs").get(0).MDCTextField.value) <
-        
-</Script>
+        1.0
+    ) {
+      $(".output--progress").get(0).MDCLinearProgress.progress =
+        parseInt($(".output--byte").html()) /
+        parseInt($(".option--mbs").get(0).MDCTextField.value);
+    } else {
+      $(".output--progress").get(0).MDCLinearProgress.progress = 1.0;
+    }
+    if (goal !== 0 && wasted >= goal * 1048576) {
+      $(".snackbar--done")
+        .get(0)
+        .MDCSnackbar.open();
+      stop();
+    }
+  }
+  if (running == true)
+    xhr[id] = $.get(
+      `https://sao.snu.ac.kr/datawaster/dummy15?${Math.random()}`,
+      () => download(id)
+    );
+};
+
+let ticker;
+
+const start = () => {
+  stopwatch.reset();
+  $(".output--seconds").html("0 seconds");
+  stopwatch.start();
+  ticker = setInterval(
+    () => $(".output--seconds").html(humanizeDuration(stopwatch.value * 1000)),
+    1000
+  );
+  threads = $(".option--threads").get(0).MDCSlider.value;
+  $(".option--mbs").get(0).MDCTextField.disabled = true;
+  $(".option--unlimited").get(0).MDCSwitch.disabled = true;
+  $(".option--threads").get(0).MDCSlider.disabled = true;
+  $(".option--unlimited").get(0).MDCSwitch.disabled = true;
+  $(".output--progress").get(0).MDCLinearProgress.determinate = getmbs() !== 0;
+  $(".output--progress")
+    .get(0)
+    .MDCLinearProgress.open();
+  $(".option--waste > .mdc-fab__label").html("Stop Wasting");
+  $(".option--waste > .mdc-fab__icon").html(
+    '<path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 8v8H8V8h8m2-2H6v12h12V6z"/>'
+  );
+
+  running = true;
+  wasted = 0;
+  xhr = [];
+  time = new Date().getTime();
+  goal = getmbs();
+  for (let i = 0; i < threads; i++) download(i);
+};
+
+const stop = () => {
+  stopwatch.stop();
+  clearInterval(ticker);
+  running = false;
+  document.querySelector(
+    ".option--mbs"
+  ).MDCTextField.disabled = document.querySelector(
+    ".option--unlimited"
+  ).MDCSwitch.checked;
+  $(".option--unlimited").get(0).MDCSwitch.disabled = false;
+  $(".option--threads").get(0).MDCSlider.disabled = false;
+  $(".output--progress")
+    .get(0)
+    .MDCLinearProgress.close();
+  $(".option--waste > .mdc-fab__label").html("Start Wasting");
+  $(".option--waste > .mdc-fab__icon").html(
+    '<path fill="none" d="M0 0h24v24H0V0z"/><path d="M10 8.64L15.27 12 10 15.36V8.64M8 5v14l11-7L8 5z"/>'
+  );
+};
+
+const unlimitedChanged = () => {
+  const on = $(".option--unlimited").get(0).MDCSwitch.checked;
+  $(".option--mbs").get(0).MDCTextField.disabled = on;
+  $(".option--mbs").toggle(!on);
+  document.querySelector(
+    ".output--progress"
+  ).MDCLinearProgress.determinate = !on;
+};
+
+$(".option--unlimited")
+  .get(0)
+  .MDCSwitch.listen("change", () => unlimitedChanged());
+
+$(".option--waste").click(() => {
+  if ($(".option--mbs").get(0).MDCTextField.value === "") {
+    $(".option--unlimited").get(0).MDCSwitch.checked = true;
+    unlimitedChanged();
+  }
+  if (running === false && stopped === false) start();
+  else if (stopped === false) stop();
+});
+
+    </script>
+</body>
+
+</html>
